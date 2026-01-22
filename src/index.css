@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500;1,700;1,800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans TC', 'Montserrat', 'Roboto', Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+button:focus,
+button:active,
+button:visited,
+button:hover {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 不顯示滾動條 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.outline * {
+  outline: 1px solid #000;
+}
+
+/************************************************
+/* 右移
+*/
+/*laser border*/
+@keyframes shifting {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/************************************************
+/* 左移
+*/
+/*laser border*/
+@keyframes shiftingLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/************************************************
+/* 閃閃 (StageLayer)
+*/
+/*(舞台)*/
+.ani-flashing0 {
+  animation: flashing0 0.1s ease-in-out infinite;
+  /* animation: flashing1 0.01s ease-in-out infinite; */
+  animation-delay: 0ms;
+}
+
+@keyframes flashing0 {
+  0%,
+  100% {
+    filter: brightness(1) contrast(1);
+  }
+
+  50% {
+    filter: brightness(1.05) contrast(1.05);
+  }
+}
+
+/*(雙11)*/
+.ani-flashing1 {
+  animation: flashing1 1s ease-in-out infinite;
+  /* animation: flashing1 0.01s ease-in-out infinite; */
+  animation-delay: 0ms;
+}
+
+@keyframes flashing1 {
+  0%,
+  100% {
+    filter: brightness(1) contrast(1);
+  }
+
+  50% {
+    filter: brightness(1.15) contrast(1.1);
+  }
+}
+
+/*(激殺戰)*/
+.ani-flashing2 {
+  animation: flashing2 1s ease-in-out infinite;
+  /* animation: flashing1 0.01s ease-in-out infinite; */
+  animation-delay: 250ms;
+}
+
+@keyframes flashing2 {
+  0%,
+  100% {
+    filter: brightness(1) contrast(1);
+  }
+
+  50% {
+    filter: brightness(1.05) contrast(1.05);
+  }
+}
+
+/************************************************
+/* 刷光 (StageLayer)
+*/
+/*(激殺戰 masklayer)*/
+@keyframes flashshine {
+  0% {
+    margin-left: -5000%;
+  }
+
+  30% {
+    margin-left: -5000%;
+  }
+
+  40% {
+    margin-left: -4750%;
+  }
+
+  70% {
+    margin-left: 200%;
+  }
+
+  100% {
+    margin-left: 200%;
+  }
+}
+
+/************************************************
+/* 旋轉 (StageLayer)
+*/
+
+/*coin1*/
+.ani-rotating1 {
+  animation: rotating1 4s ease-out infinite;
+  animation-delay: 1000ms;
+}
+
+@keyframes rotating1 {
+  0% {
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    transform: rotate(-135deg);
+    opacity: 0;
+  }
+}
+
+/*coin1 img*/
+.ani-spinning1 {
+  animation: spinning1 4s ease-out infinite;
+  animation-delay: 1000ms;
+}
+
+@keyframes spinning1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30%,
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/*coin2*/
+.ani-rotating2 {
+  animation: rotating2 4s ease-out infinite;
+  animation-delay: 0ms;
+}
+
+@keyframes rotating2 {
+  0% {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    transform: rotate(135deg);
+    opacity: 0;
+  }
+}
+
+/*coin2 img*/
+.ani-spinning2 {
+  animation: spinning2 4s ease-out infinite;
+  animation-delay: 0ms;
+}
+
+@keyframes spinning2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/************************************************
+/* 浮動 (BGLayer3) 
+*/
+/*deco-baloon1*/
+.ani-floating1 {
+  @media (min-width: 767px) {
+    animation: floating1 12s ease-in-out infinite;
+    animation-delay: 1000ms;
+  }
+}
+
+@keyframes floating1 {
+  0%,
+  100% {
+    transform: translatey(0%) scaleX(-100%);
+  }
+
+  50% {
+    transform: translatey(13.5%) scaleX(-100%);
+  }
+}
+
+/*deco-baloon2*/
+.ani-floating2 {
+  animation: floating2 16s ease-in-out infinite;
+  animation-delay: 2500ms;
+}
+
+@keyframes floating2 {
+  0%,
+  100% {
+    transform: translatey(0%);
+  }
+
+  50% {
+    transform: translatey(17%);
+  }
+}
+
+/*deco-baloon3*/
+.ani-floating3 {
+  animation: floating3 8s ease-in-out infinite;
+  animation-delay: 2000ms;
+}
+
+@keyframes floating3 {
+  0%,
+  100% {
+    transform: translatey(0%);
+  }
+
+  50% {
+    transform: translatey(10%);
+  }
+}
+
+/*deliverybox*/
+.ani-floating4 {
+  animation: floating4 12s ease-in-out infinite;
+  animation-delay: 0ms;
+}
+
+@keyframes floating4 {
+  0%,
+  100% {
+    transform: translatey(0%) translatex(-3px);
+  }
+
+  50% {
+    transform: translatey(13.5%) translatex(3px);
+  }
+}
+
+/*redbox1*/
+.ani-floating5 {
+  @media (min-width: 767px) {
+    animation: floating5 10s ease-in-out infinite;
+    animation-delay: 500ms;
+  }
+}
+
+@keyframes floating5 {
+  0%,
+  100% {
+    transform: translatey(0%) translatex(3px);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: translatey(-20px) translatex(-3px);
+    filter: brightness(1.2);
+  }
+}
+
+/*redbox2*/
+.ani-floating6 {
+  @media (min-width: 767px) {
+    animation: floating6 10s ease-in-out infinite;
+    animation-delay: 500ms;
+  }
+}
+
+@keyframes floating6 {
+  0%,
+  100% {
+    transform: translatey(0%) translatex(-3px);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: translatey(-20px) translatex(3px);
+    filter: brightness(1.5);
+  }
+}
+
+/************************************************
+/* 變亮 (BGLayer3)
+*/
+/*headphone*/
+.ani-shine1 {
+  @media (min-width: 767px) {
+    animation: shine1 2s ease-in-out infinite;
+    animation-delay: 0ms;
+  }
+}
+
+@keyframes shine1 {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+/************************************************
+/* 放射 (BGShiney)
+*/
+.ani-stars {
+  animation: stars 1.8s ease-in infinite;
+}
+
+@keyframes stars {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(1.15);
+  }
+}
+
+/************************************************
+/* 變亮 (Section2 BgLayer)
+*/
+/*bg-grid*/
+.ani-shine2 {
+  @media (min-width: 767px) {
+    animation: shine2 4s ease-in-out infinite;
+    animation-delay: 0ms;
+  }
+}
+
+@keyframes shine2 {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1) contrast(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    filter: brightness(1.1) contrast(1.3);
+  }
+}
+
+/************************************************
+/* 色調 (StageLayer)
+*/
+/*bgStageLayerSpace*/
+.ani-color1 {
+  animation: color1 12s linear infinite;
+  animation-delay: 0ms;
+}
+
+@keyframes color1 {
+  0%,
+  100% {
+    opacity: 0;
+    filter: hue-rotate(0) brightness(1);
+  }
+
+  50% {
+    opacity: 1;
+    filter: hue-rotate(360deg) brightness(1.2);
+  }
+}
