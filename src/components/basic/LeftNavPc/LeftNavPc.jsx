@@ -12,8 +12,6 @@ import useWindowScroll from '../../../hooks/useWindowScroll';
 
 // images
 import { placeImg } from '../../../assets/base';
-import { navLeftnavListBg } from '../../../assets/layout';
-
 // style
 import {
   SNavContainer,
@@ -27,6 +25,7 @@ import {
 } from './style';
 
 const leftNavBg = 'leftNav-bg.svg';
+const leftnavListBg = 'leftnav-list-bg.jpg';
 
 function LeftNavPc({ newNavData, moreActive }) {
   const [isOpen, setIsOpen] = useState(true); // 左選開關
@@ -106,7 +105,7 @@ function LeftNavPc({ newNavData, moreActive }) {
           {/* 分會場 */}
           <SMainList
             style={{
-              backgroundImage: `url(./${navLeftnavListBg})`,
+              backgroundImage: `url(./${leftnavListBg})`,
             }}
           >
             {newNavData.otherLink.length === 0 ? (
@@ -139,7 +138,7 @@ function LeftNavPc({ newNavData, moreActive }) {
           {/* 品牌區 */}
           <SSubList
             style={{
-              backgroundImage: `url(./${navLeftnavListBg})`,
+              backgroundImage: `url(./${leftnavListBg})`,
             }}
           >
             {newNavData.otherLink.length === 0 ? (
